@@ -3,7 +3,7 @@ It helps users understand key ideas quickly without reading every page.
 Summaries are presented in a beautiful, interactive slider for smooth reading.
 Designed to reduce information overload and boost productivity.
 
-Built with Next.js 16 App Router, Clerk for Auth, React, OpenAI GPT-4, LangChain, ShadCN UI components, Tailwind CSS 4, NeonDB, UploadThing, Stripe for payments, TypeScript, TailwindCSS and more.
+Built with Next.js 16 App Router, Clerk for Auth, React, OpenAI GPT-5.2, Gemini-2.5, LangChain, ShadCN UI components, Tailwind CSS 4, NeonDB, UploadThing, Stripe for payments, TypeScript, TailwindCSS and more.
 
 
 ---
