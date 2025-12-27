@@ -30,7 +30,7 @@ export default function RootLayout({
           <div className="flex flex-col relative min-h-screen">
             <Header />
             <main className="flex-1">{children}</main>
-            <Footer />
+            {/* <Footer /> */}
           </div>
           <Toaster position="top-right" />
         </body>
