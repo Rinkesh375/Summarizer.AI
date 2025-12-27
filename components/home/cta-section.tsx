@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import { currentUser } from "@clerk/nextjs/server";
 
-export default function CTASection() {
+export default async function CTASection() {
+  const user = await currentUser();
   return (
     <section className="bg-gray-50 py-12">
       <div className="py-12 lg:py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +27,7 @@ export default function CTASection() {
                 className="w-full min-[400px]:w-auto bg-linear-to-r from-slate-900 to-rose-500 hover:from-rose-500 hover:to-slate-900 hover:text-white text-white transition-all duration-300"
               >
                 <Link
-                  href="/#pricing"
+                  href={user ? "/upload" : "/sign-in"}
                   className="flex items-center justify-center"
                 >
                   Get Started{" "}
