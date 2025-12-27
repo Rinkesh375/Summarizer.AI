@@ -4,7 +4,7 @@ export default function ProgressBar({
   sections,
   currentSection,
 }: {
-  sections: Array<{title:string,points:string[]}>;
+  sections: Array<{ title: string; points: string[] }>;
   currentSection: number;
 }) {
   return (

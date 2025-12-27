@@ -3,9 +3,9 @@ import { getDbConnection } from "./db";
 import { currentUser } from "@clerk/nextjs/server";
 
 export async function getSummaries(userId: string): Promise<PdfSummary[]> {
-    const sql = await getDbConnection();
-  
-    const summaries = await sql`
+  const sql = await getDbConnection();
+
+  const summaries = await sql`
       SELECT
         id,
         user_id,
@@ -20,10 +20,9 @@ export async function getSummaries(userId: string): Promise<PdfSummary[]> {
       WHERE user_id = ${userId}
       ORDER BY created_at DESC;
     `;
-  
-    return summaries as PdfSummary[];
-  }
-  
+
+  return summaries as PdfSummary[];
+}
 
 export const getSummaryById = async (
   id: string
@@ -64,3 +63,20 @@ export const getSummaryById = async (
     return { success: false, error: "Internal server error" };
   }
 };
+
+export async function getUserUploadCount(userId: string): Promise<number> {
+  const sql = await getDbConnection();
+
+  try {
+    const [{ count }] = await sql`
+      SELECT COUNT(*) AS count
+      FROM pdf_summaries
+      WHERE user_id = ${userId};
+    `;
+
+    return Number(count);
+  } catch (err) {
+    console.error("Error fetching user upload count", err);
+    return 0;
+  }
+}

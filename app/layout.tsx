@@ -13,7 +13,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Summarizer AI-Powered PDF Summarize",
+  title: "Summarizer.AI AI-Powered PDF Summarize",
   description:
     "Summarize your pdf's with AI. Upload your pdf and get a summary of the pdf.",
 };

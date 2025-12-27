@@ -7,10 +7,9 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getSummaries } from "@/lib/summaries";
 import EmptySummaryState from "@/components/summarize/empty-summary.state";
+import { freeUploadLimit } from "@/constants/price-plans-list";
 
 export default async function DashboardPage() {
-  const uploadLimit = 5;
-
   const user = await currentUser();
   const userId = user?.id;
   if (!userId) return redirect("/sign-in");
@@ -54,22 +53,37 @@ export default async function DashboardPage() {
               </Link>
             </Button>
           </div>
-          <div className="mb-6">
-            <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 text-rose-800">
-              <p className="text-sm">
-                You've reached the limit of {uploadLimit} uploads on the Basic
-                plan.{" "}
-                <Link
-                  href="/#pricing"
-                  className="text-rose-800 underline font-medium underline-offset-4 inline-flex items-center"
-                >
-                  Click here to upgrade to Pro{" "}
-                  <ArrowRight className="w-4 h-4 inline-block" />
-                </Link>{" "}
-                for unlimited uploads.
-              </p>
+          {summaries.length < freeUploadLimit ? (
+            <div className="mb-6">
+              <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 text-rose-800">
+                <p className="text-sm">
+                  You are using the <strong>Free plan</strong>. You have{" "}
+                  <strong>{freeUploadLimit - summaries.length}</strong> free
+                  summar
+                  {freeUploadLimit - summaries.length > 1 ? "ies" : "y"}{" "}
+                  remaining.
+                </p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="mb-6">
+              <div className="bg-rose-50 border border-rose-200 rounded-lg p-4 text-rose-800">
+                <p className="text-sm">
+                  You’ve used all <strong>{freeUploadLimit}</strong> free
+                  summaries included in your Free plan. Want to continue?{" "}
+                  <Link
+                    href="/#pricing"
+                    className="inline-flex items-center gap-1 font-medium underline underline-offset-4"
+                  >
+                    Upgrade to Pro
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>{" "}
+                  to unlock unlimited uploads and faster processing.
+                </p>
+              </div>
+            </div>
+          )}
+
           {summaries.length ? (
             <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 sm:px-0">
               {summaries.map((card) => (
