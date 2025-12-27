@@ -58,11 +58,14 @@ To get started with this project:
 
 ## 🍴 How to Fork and Clone
 
-1. Click the **"Fork"** button in the top-right corner of this repository to create your own copy
-2. Clone your forked repository to your local machine
-3. Install dependencies with:
+1. Click the **"Fork"** button in the top-right corner of this repository to create your own copy  
+2. Clone your forked repository to your local machine  
+3. Install dependencies:
    ```bash
    npm install
-  npm install
-4. Set up your environment variables
-5. Run the development server with:   
+4. Set up your environment variables by creating a `.env` file in the root of the project and adding the required keys (OpenAI, Clerk, UploadThing, Stripe, NeonDB).
+5. Run the development server:
+   ```bash
+   npm run dev
+
+
