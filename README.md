@@ -1,6 +1,6 @@
 # Summarizer.AI – Transform PDFs into a beautiful reel of impactful summaries with the power of AI!
 
-Built with Next.js 15 App Router, Clerk for Auth, React, OpenAI GPT-4, LangChain, ShadCN UI components, Tailwind CSS 4, NeonDB, UploadThing, Stripe for payments, TypeScript, TailwindCSS and more.
+Built with Next.js 16 App Router, Clerk for Auth, React, OpenAI GPT-4, LangChain, ShadCN UI components, Tailwind CSS 4, NeonDB, UploadThing, Stripe for payments, TypeScript, TailwindCSS and more.
 
 
 ---
@@ -46,7 +46,7 @@ Built with Next.js 15 App Router, Clerk for Auth, React, OpenAI GPT-4, LangChain
 To get started with this project:
 
 1. Fork the repository
-2. Copy the `.env.example` variables into a separate `.env.local` file
+2. Copy the `.env-sample` variables into a separate `.env` file
 3. Create the required credentials:
    - OpenAI API key
    - Clerk authentication
