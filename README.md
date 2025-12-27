@@ -16,6 +16,7 @@ Built with Next.js 16 App Router, Clerk for Auth, React, OpenAI GPT-4, LangChain
 - ⚛️ **React** for building interactive user interfaces with reusable components
 - 🔐 **Clerk** for secure authentication with Passkeys, GitHub, and Google Sign-in
 - 🤖 **GPT-5.2 powered summarization** with contextual understanding and emoji-enhanced output
+- 🤖 **Gemini-2.5 Flash powered summarization** with contextual understanding and emoji-enhanced output
 - 📄 **LangChain** for PDF parsing, text extraction, and document chunking
 - 🎨 **ShadCN UI** for accessible, customizable React components
 - 🗄️ **NeonDB (PostgreSQL)** for serverless database storage of summaries and user data
